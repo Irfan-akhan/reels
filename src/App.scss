@@ -1,0 +1,36 @@
+// variables
+$base-color: #e9e2d8;
+html {
+    scroll-snap-type: y mandatory;
+}
+.app {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+header {
+    height: 10vh;
+    & .app__logo {
+        height: 7vh;
+    }
+    & .app__tag {
+        color: white;
+        font-size: 16px;
+    }
+    margin-bottom: -120px;
+}
+.app__videos {
+    // position: relative;
+    height: 65vh;
+    width: 50%;
+    border-radius: 20px;
+    max-width: 550px;
+    max-height: 1200px;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
