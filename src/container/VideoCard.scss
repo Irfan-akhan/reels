@@ -7,5 +7,27 @@
 .VideoCard__player {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: contain;
+    background-color: black;
+    cursor: pointer;
 }
+.VideoCard__topbar {
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.MuiSvgIcon-root {
+    color: #fff;
+}
+// .VideoCard__footer {
+//     position: absolute;
+//     bottom: 1%;
+//     left: 0;
+//     width: 100%;
+//     color: #fff;
+// }

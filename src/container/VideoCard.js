@@ -1,16 +1,42 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
+
 import './VideoCard.scss';
-import VideoItem from './VideoItem';
+import myvideo from './WASM.mp4';
+import VideoFooter from './VideoFooter';
 
 function VideoCard(props) {
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const videoRef = useRef(null);
+    const videoClickHandler = () => {
+        console.log(videoRef.current);
+        if (!isVideoPlaying) {
+            videoRef.current.play();
+            setIsVideoPlaying(true);
+        } else {
+            videoRef.current.pause();
+            setIsVideoPlaying(false);
+        }
+    };
     return (
         <div className="VideoCard">
-            <iframe
+            <div className="VideoCard__topbar">
+                <ArrowBackIosIcon />
+                <CameraAltIcon />
+            </div>
+            <video
+                onClick={videoClickHandler}
                 className="VideoCard__player"
-                title="vid"
-                frameBorder="0"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY"
-            ></iframe>
+                loop
+                alt="IG reeel"
+                ref={videoRef}
+                src={myvideo}
+            ></video>
+            <div className="VideoCard__footer">
+                <VideoFooter />
+            </div>
         </div>
     );
 }
