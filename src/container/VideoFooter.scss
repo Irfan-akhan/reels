@@ -17,6 +17,16 @@
     &__controls {
         display: flex;
         justify-content: space-between;
+        & div.left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & div.right > * {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
         & > div > * {
             margin-right: 5px;
             &:last-of-type {

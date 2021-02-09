@@ -9,12 +9,12 @@ import FeedbackIcon from '@material-ui/icons/Feedback';
 
 import './VideoFooter.scss';
 
-function VideoFooter() {
+function VideoFooter({ likes, shares, avatarSrc, channel }) {
     return (
         <div className="VideoFooter">
             <div className="VideoFooter__text">
-                <Avatar src="https://i.pinimg.com/originals/56/41/54/564154aacdbe7d3238df86fef9fae136.jpg" />
-                <h3>clever follow</h3>
+                <Avatar src={avatarSrc} />
+                <h3>{channel} follow</h3>
             </div>
             <div className="VideoFooter__controls">
                 <div className="left">
@@ -23,9 +23,13 @@ function VideoFooter() {
                     <MoreHorizIcon fontSize="medium" />
                 </div>
                 <div className="right">
-                    <FavoriteIcon fontSize="medium" /> <span>100</span>
-                    <FeedbackIcon fontSize="medium" />
-                    200
+                    <div>
+                        <FavoriteIcon fontSize="small" /> <span>{likes}</span>
+                    </div>
+                    <div>
+                        <FeedbackIcon fontSize="small" />
+                        <span>{shares}</span>
+                    </div>
                 </div>
             </div>
         </div>
